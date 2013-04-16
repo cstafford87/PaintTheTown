@@ -1,97 +1,63 @@
-﻿
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>Drop-Down Menu</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<link rel="stylesheet" type="text/css" href="css/default.css">
+﻿<script type="text/javascript">
 
-<!-- dd menu -->
-<script type="text/javascript">
-<!--
-var timeout         = 500;
-var closetimer		= 0;
-var ddmenuitem      = 0;
+    $(document).ready(function () {
+        
+        $('li.navItems').hover(
+            function() {
+                $('ul', this).fadeIn('medium', function() {
+                    $('ul', this).css('display', 'block');
+                });
+            },
+			 function() {
+			            $('ul', this).fadeOut('medium', function() {
+			                $('ul', this).css('display', 'none');
+			            });
+			});    
+    });
+    
 
-// open hidden layer
-function mopen(id)
-{	
-	// cancel close timer
-	mcancelclosetime();
-
-	// close old layer
-	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-
-	// get new layer and show it
-	ddmenuitem = document.getElementById(id);
-	ddmenuitem.style.visibility = 'visible';
-
-}
-// close showed layer
-function mclose()
-{
-	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
-}
-
-// go close timer
-function mclosetime()
-{
-	closetimer = window.setTimeout(mclose, timeout);
-}
-
-// cancel close timer
-function mcancelclosetime()
-{
-	if(closetimer)
-	{
-		window.clearTimeout(closetimer);
-		closetimer = null;
-	}
-}
-
-// close layer when click-out
-document.onclick = mclose; 
-// -->
 </script>
 
-</head>
-<body>
+<ul id="navBar">
+    <li class="navItems">
+        <a href="#" class="rounded-top-corners top-left-right-borders">Packages</a>
+        <ul>
+            <li><a href="#">Package 1</a></li>
+            <li><a href="#">Package 2</a></li>
+            <li><a href="#">Package 3</a></li>
+            <li><a href="#">Package 4</a></li>
+            <li><a href="#">Package 5</a></li>
+        </ul>
+    </li>
 
-<ul id="sddm">
-	<li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Packages</a>
-		<div id="m1" class="rounded-bottom-corners" style="width: 120px" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-		<a href="#">Package 1</a>
-		<a href="#">Package 2</a>
-		<a href="#">Package 3</a>
-		<a href="#">Package 4</a>
-		<a href="#">Package 5</a>
-		</div>
-	</li>
-	<li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Gallery</a>
-	<div id="m2" class="rounded-bottom-corners" style="width: 120px;"onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-		<a href="#">Weddings</a>
-		<a href="#">Birthdays</a>
-		<a href="#">Stag Dos</a>
-		<a href="#">Hen Partys</a>
-		<a href="#">Anniversaries</a>
-	</div>
-	</li>
-	<li><a href="#" onmouseover="mopen('m3')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Events</a>
-		<div id="m3" class="rounded-bottom-corners" style="width: 120px"onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-		<a href="#">Weddings</a>
-		<a href="#">Birthdays</a>
-		<a href="#">Stag Dos</a>
-		<a href="#">Hen Partys</a>
-		<a href="#">Anniversaries</a>
-		</div>
-	</li>
-	<li><a href="#" onmouseover="mopen('m4')" onmouseout="mclosetime()" class="rounded-top-corners button-border">About us</a>
-	</li>
-	<li><a href="#" onmouseover="mopen('m5')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Contact us</a>
-	</li>
+    <li class="navItems">
+        <a href="#" class="rounded-top-corners top-left-right-borders">Gallery</a>
+        <ul>
+            <li><a href="#">Weddings</a></li>
+            <li><a href="#">Birthdays</a></li>
+            <li><a href="#">Stag Dos</a></li>
+            <li><a href="#">Hen Partys</a></li>
+            <li><a href="#">Anniversaries</a></li>
+        </ul>
+    </li>
+
+    <li class="navItems">
+        <a href="#"class="rounded-top-corners top-left-right-borders">Events</a>
+        <ul>
+            <li><a href="#">Weddings</a></li>
+            <li><a href="#">Birthdays</a></li>
+            <li><a href="#">Stag Dos</a></li>
+            <li><a href="#">Hen Partys</a></li>
+            <li><a href="#">Anniversaries</a></li>
+        </ul>
+    </li>
+
+    <li class="navItems">
+        <a href="#" class="rounded-top-corners top-left-right-borders">About us</a>
+    </li>
+
+    <li class="navItems">
+        <a href="#" class="rounded-top-corners top-left-right-borders">Contact us</a>
+    </li>
 </ul>
 <div style="clear:both"></div>
-
-</body>
-</html>

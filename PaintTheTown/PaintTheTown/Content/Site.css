@@ -74,65 +74,72 @@ textarea
     display: none;
 }
 
-#sddm
+#navBar
 {	margin: 0;
 	padding: 0;
 	z-index: 60}
 
-#sddm li
+.navItems
 {	margin: 0;
 	padding: 0;
 	list-style: none;
 	float: left;
 	font: bold 11px arial}
 
-
-
-#sddm li a
+.navItems a
 {	display: block;
 	margin: 2px 1px 0 0;
 	padding: 4px 10px;
 	width: 90px;
 	height: 15px;
-	background: #f5045b;
-
+	background: #fd88b2;
 	color: #FFF;
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none}
 
-#sddm li a:hover
-{	background: #e60455}
+.navItems a:hover
+{	background: #FFAACC}
 
 .rounded-top-corners {
-border-radius: 5px 5px 0px 0px; 
--moz-border-radius: 5px 5px 0px 0px; 
--webkit-border-radius: 5px 5px 0px 0px;
+border-radius: 5px 5px 0 0; 
+-moz-border-radius: 5px 5px 0 0; 
+-webkit-border-radius: 5px 5px 0 0;
 margin-top: 5px;
+}
+
+.top-left-right-borders {
+    border-top: 2px solid #f6045b;
+    border-left: 2px solid #f6045b;
+    border-right: 2px solid #f6045b;
 }
 
 .rounded-corners {
  border-radius: 5px 5px 5px 5px; 
 -moz-border-radius: 5px 5px 5px 5px; 
 -webkit-border-radius: 5px 5px 5px 5px;
-
-}
-
-.rounded-bottom-corners {
-border-radius: 0px 0px 5px 5px; 
--moz-border-radius: 0px 0px 5px 5px; 
--webkit-border-radius: 0px 0px 5px 5px;
 }
 
 
-#sddm div
-{	position: absolute;
-	visibility: hidden;
+
+.navItems ul
+{	position:absolute;
+    display: none;
 	margin: 0;
 	padding: 0;
-	background: #fe3389;}
+    margin-top: -2px;
+    width: 110px;
+	background: #fd88b2;
+    list-style-type: none;
+    border-bottom: 2px solid #f6045b;
+    border-left: 2px solid #f6045b;
+    border-right: 2px solid #f6045b;
+    border-radius: 0 0 5px 5px; 
+    -moz-border-radius: 0 0 5px 5px; 
+    -webkit-border-radius: 0 0 5px 5px;
+}
 
-	#sddm div a
+	.navItems ul a
 	{	position: relative;
 		display: block;
 		margin: 0;
@@ -141,10 +148,10 @@ border-radius: 0px 0px 5px 5px;
 		white-space: nowrap;
 		text-align: left;
 		text-decoration: none;
-		background: #FFBBCC;
+		background: #fd88b2;
 		color: #FFFFFF;
 		font: 11px arial}
 
-	#sddm div a:hover
+	.navItems ul a:hover
 	{	background: #FFAACC;
 		color: #FFF}
