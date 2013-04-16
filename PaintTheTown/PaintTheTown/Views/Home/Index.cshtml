@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Paint The Town!";
+}
+<script src="../../Scripts/jquery-1.7.1.min.js"></script>
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+
+<script type="text/javascript">
+
+    function fbFetch() {
+            //Set Url of JSON data from the facebook graph api. make sure callback is set with a '?' to overcome the cross domain problems with JSON
+        var url = "https://graph.facebook.com/paintthetownparty/posts?limit=6&access_token=285602841451312|7VwW6hsKB7dgl28UUoPB9mPzPz0&callback=?";
+
+            //Use jQuery getJSON method to fetch the data from the url and then create our unordered list with the relevant data.
+            $.getJSON(url, function(json) {
+                var html = "<div style='overflow-y: auto; height: 420px; width:460px'>" +
+                    "<ul style='list-style-type: none; padding:20px; margin:0;'>";
+
+                //loop through and within data array's retrieve the message variable.
+                //XSS ATTACK FIX AS OF 6/1/12 PLEASE UPDATE TO THIS ASAP.
+                $.each(json.data, function(i, fb) {
+                    html += "<li class='rounded-corners' style='width: 400px; color: white; background-color: #fd88b2; padding: 5px; border: 1px solid rgb(231, 4, 85); margin-bottom: 10px'>" + $('<div>').html(fb.message).text() + "</li>";
+                });
+
+                html += "</ul></div>";
+
+                //A little animation once fetched
+                $('.facebookfeed').animate({ opacity: 0 }, 500, function() {
+                    $('.facebookfeed').html(html);
+                });
+                $('.facebookfeed').animate({ opacity: 1 }, 500);
+            });
+
+        };
+  
+</script>
+  
+<div style="width: 900px; margin: 0 auto; padding-top: 10px">
+
+            <img src="../../Content/Images/logo.png" alt="" style="height: 180px; width: 200px"/>
+
+        <div style="display:inline-block; padding-left: 130px; margin-bottom: -5px">
+            
+            @Html.Partial("_Navigation") 
+        </div>
+        <div class="rounded-corners"  style="background-color: #f6045b; height: 550px; display: inline-block; width:900px">
+            <div style="width: 898px; margin-top: 60px; height: 420px; background-color: white; border: 1px solid #f6045b">
+                
+                <div class="facebookfeed"></div>
+            </div>
+        </div>
+
+    </div>
+<script type="text/javascript"> fbFetch()</script>

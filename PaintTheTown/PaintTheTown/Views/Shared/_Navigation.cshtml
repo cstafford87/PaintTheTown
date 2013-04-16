@@ -1,0 +1,97 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Drop-Down Menu</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+
+<!-- dd menu -->
+<script type="text/javascript">
+<!--
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>
+
+</head>
+<body>
+
+<ul id="sddm">
+	<li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Packages</a>
+		<div id="m1" class="rounded-bottom-corners" style="width: 120px" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">Package 1</a>
+		<a href="#">Package 2</a>
+		<a href="#">Package 3</a>
+		<a href="#">Package 4</a>
+		<a href="#">Package 5</a>
+		</div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Gallery</a>
+	<div id="m2" class="rounded-bottom-corners" style="width: 120px;"onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">Weddings</a>
+		<a href="#">Birthdays</a>
+		<a href="#">Stag Dos</a>
+		<a href="#">Hen Partys</a>
+		<a href="#">Anniversaries</a>
+	</div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m3')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Events</a>
+		<div id="m3" class="rounded-bottom-corners" style="width: 120px"onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">Weddings</a>
+		<a href="#">Birthdays</a>
+		<a href="#">Stag Dos</a>
+		<a href="#">Hen Partys</a>
+		<a href="#">Anniversaries</a>
+		</div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m4')" onmouseout="mclosetime()" class="rounded-top-corners button-border">About us</a>
+	</li>
+	<li><a href="#" onmouseover="mopen('m5')" onmouseout="mclosetime()" class="rounded-top-corners button-border">Contact us</a>
+	</li>
+</ul>
+<div style="clear:both"></div>
+
+</body>
+</html>

@@ -73,3 +73,78 @@ textarea
 {
     display: none;
 }
+
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 60}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 11px arial}
+
+
+
+#sddm li a
+{	display: block;
+	margin: 2px 1px 0 0;
+	padding: 4px 10px;
+	width: 90px;
+	height: 15px;
+	background: #f5045b;
+
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none}
+
+#sddm li a:hover
+{	background: #e60455}
+
+.rounded-top-corners {
+border-radius: 5px 5px 0px 0px; 
+-moz-border-radius: 5px 5px 0px 0px; 
+-webkit-border-radius: 5px 5px 0px 0px;
+margin-top: 5px;
+}
+
+.rounded-corners {
+ border-radius: 5px 5px 5px 5px; 
+-moz-border-radius: 5px 5px 5px 5px; 
+-webkit-border-radius: 5px 5px 5px 5px;
+
+}
+
+.rounded-bottom-corners {
+border-radius: 0px 0px 5px 5px; 
+-moz-border-radius: 0px 0px 5px 5px; 
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #fe3389;}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		background: #FFBBCC;
+		color: #FFFFFF;
+		font: 11px arial}
+
+	#sddm div a:hover
+	{	background: #FFAACC;
+		color: #FFF}
